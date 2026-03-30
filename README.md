@@ -1,4 +1,5 @@
-![StaticSentry Header](docs/img/StaticSentry-Header.png)
+
+# <img src="docs/img/StaticSentry-Logo.png" width="40%" height="40%"> <ins>StaticSentry</ins> 
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
 ![GUI](https://img.shields.io/badge/GUI-CustomTkinter-1f6feb)

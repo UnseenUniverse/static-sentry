@@ -24,7 +24,7 @@ Hardcoded credentials and sensitive data in source code are a common security ri
 
 - Prevent accidental credential leaks before pushing to GitHub  
 - Scan student or personal projects for sensitive data  
-- Lightweight security checks for small codebases  
+- Lightweight security checks for small codebases
 
 ---
 
@@ -69,9 +69,7 @@ Hardcoded credentials and sensitive data in source code are a common security ri
 - Styled scrollbar and clean layout  
 
 📄 **Export Reports**
-- Save scan results to a `.txt` file  
-
----
+- Save scan results to a `.txt` file
 
 ## 📄 Example Output
 

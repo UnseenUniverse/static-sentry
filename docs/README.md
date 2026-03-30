@@ -97,7 +97,7 @@ Line 12: click here
 ### 🧪 Example Test File
 
 An example file with mock credentials is included in:
-`examples/sample_secrets.py`
+`tests/sample_secrets.py`
 
 Use it to test detection features.
 

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/img/StaticSentry-Logo.png" width="35%" height="35%" alt="StaticSentry Logo" />
+  <img src="img/StaticSentry-Logo.png" width="35%" height="35%" alt="StaticSentry Logo" />
 </p>
 <h1 align="center"><ins>StaticSentry</ins></h1>
 
@@ -90,7 +90,7 @@ Line 12: click here
 
 ### 🖼️ Preview
 
-![App Screenshot](docs/img/example.png)
+![App Screenshot](img/example.png)
 
 <hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 

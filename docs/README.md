@@ -94,6 +94,13 @@ Line 12: click here
 
 <hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
+### 🧪 Example Test File
+
+An example file with mock credentials is included in:
+`examples/sample_secrets.py`
+
+Use it to test detection features.
+
 ### 🛠️ Technologies Used
 
 - Python 3.x  

@@ -1,0 +1,48 @@
+    # -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Logs
+*.log
+
+# -----------------------------
+# IDE (PyCharm / IntelliJ)
+# -----------------------------
+.idea/
+*.iml
+
+# -----------------------------
+# OS files
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Environment variables / secrets
+# -----------------------------
+.env
+
+# -----------------------------
+# Generated reports
+# -----------------------------
+*.txt
+
+# -----------------------------
+# Misc
+# -----------------------------
+*.sqlite3

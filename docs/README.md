@@ -101,6 +101,8 @@ An example file with mock credentials is included in:
 
 Use it to test detection features.
 
+<hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
+
 ### 🛠️ Technologies Used
 
 - Python 3.x  

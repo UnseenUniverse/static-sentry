@@ -14,7 +14,14 @@ StaticSentry scans files in a selected directory to detect potentially sensitive
 ---
 
 # 🔍 Why StaticSentry?
+
 Hardcoded credentials and sensitive data in source code are a common security risk. StaticSentry helps identify these issues early by scanning files for patterns associated with secrets, reducing the risk of accidental exposure.
+
+### 💡 Use Cases
+
+- Prevent accidental credential leaks before pushing to GitHub  
+- Scan student or personal projects for sensitive data  
+- Lightweight security checks for small codebases  
 
 ---
 
@@ -97,11 +104,6 @@ Line 12: click here
 - Python 3.10+
 - customtkinter
 
-Install dependency:
-```bash
-pip install customtkinter
-```
-
 ---
 
 ## ⚙️ Installation
@@ -117,9 +119,9 @@ python -m venv .venv
 .\.venv\Scripts\activate
 ```
 3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+
+Dependencies are listed in `requirements.txt`
+
 4. Run the application:
 ```bash
 python main.py

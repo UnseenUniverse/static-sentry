@@ -27,8 +27,8 @@ class App(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        self.title("Cybersecurity Scanner")
-        self.geometry("1000x650")
+        self.title("StaticSentry")
+        self.geometry("1280x720")
 
         self.selected_folder = ""
 

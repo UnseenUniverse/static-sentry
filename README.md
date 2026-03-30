@@ -11,8 +11,7 @@
 ![Cybersecurity](https://img.shields.io/badge/Focus-Cybersecurity-red)
 
 <p align="center"> A Python-based cybersecurity scanning tool with a modern GUI built using CustomTkinter.
-
-StaticSentry scans files in a selected directory to detect potentially sensitive or suspicious content using keyword matching and regex-based analysis. </p>
+<p align="center"> StaticSentry scans files in a selected directory to detect potentially sensitive or suspicious content using keyword matching and regex-based analysis. </p>
 
 <hr style="border: 1px solid #3b4252; margin: 2em 0;">
 

@@ -1,7 +1,7 @@
 <p align="center">
   <img src="docs/img/StaticSentry-Logo.png" width="40%" height="40%">
 </p>
-<h1 align="center"><ins>StaticSentry</ins></h1>
+<h1 align="center" style="border-bottom: 2px solid #4fa3ff; display: inline-block;">StaticSentry</h1>
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
 ![GUI](https://img.shields.io/badge/GUI-CustomTkinter-1f6feb)

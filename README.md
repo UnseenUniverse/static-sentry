@@ -1,5 +1,3 @@
-
-
 <p align="center">
   <img src="docs/img/StaticSentry-Logo.png" width="40%" height="40%">
 </p>
@@ -16,6 +14,8 @@ A Python-based cybersecurity scanning tool with a modern GUI built using CustomT
 
 StaticSentry scans files in a selected directory to detect potentially sensitive or suspicious content using keyword matching and regex-based analysis.
 
+<hr style="border: 1px solid #3b4252; margin: 2em 0;">
+
 ### 🔍 Why StaticSentry?
 
 Hardcoded credentials and sensitive data in source code are a common security risk. StaticSentry helps identify these issues early by scanning files for patterns associated with secrets, reducing the risk of accidental exposure.
@@ -26,9 +26,9 @@ Hardcoded credentials and sensitive data in source code are a common security ri
 - Scan student or personal projects for sensitive data  
 - Lightweight security checks for small codebases
 
----
+<hr style="border: 1px solid #3b4252; margin: 2em 0;">
 
-## 🚀 Features
+### 🚀 Features
 
 🔐 **Regex-Based Secret Detection**
 
@@ -71,7 +71,9 @@ Hardcoded credentials and sensitive data in source code are a common security ri
 📄 **Export Reports**
 - Save scan results to a `.txt` file
 
-## 📄 Example Output
+<hr style="border: 1px solid #3b4252; margin: 2em 0;">
+
+### 📄 Example Output
 
 ```bash
 [CRITICAL] example.py
@@ -85,15 +87,15 @@ Line 12: click here
 [SAFE] clean_file.py
 ```
 
----
+<hr style="border: 1px solid #3b4252; margin: 2em 0;">
 
-## 🖼️ Preview
+### 🖼️ Preview
 
 ![App Screenshot](docs/img/example.png)
 
----
+<hr style="border: 1px solid #3b4252; margin: 2em 0;">
 
-## 🛠️ Technologies Used
+### 🛠️ Technologies Used
 
 - Python 3.x  
 - CustomTkinter  
@@ -101,16 +103,16 @@ Line 12: click here
 - Regex (`re` module)  
 - OS file traversal (`os.walk`)  
 
----
+<hr style="border: 1px solid #3b4252; margin: 2em 0;">
 
-## 📦 Requirements
+### 📦 Requirements
 
 - Python 3.10+
 - customtkinter
 
----
+<hr style="border: 1px solid #3b4252; margin: 2em 0;">
 
-## ⚙️ Installation
+### ⚙️ Installation
 
 1. Clone the repository:
 ```bash
@@ -131,9 +133,9 @@ Dependencies are listed in `requirements.txt`
 python main.py
 ```
 
----
+<hr style="border: 1px solid #3b4252; margin: 2em 0;">
 
-## 🚧 Future Improvements
+### 🚧 Future Improvements
 
 - Add entropy-based secret detection
 - Support for additional file types (JSON, YAML)
@@ -141,15 +143,15 @@ python main.py
 - Multithreaded scanning for performance
 - Custom rule configuration via GUI
 
----
+<hr style="border: 1px solid #3b4252; margin: 2em 0;">
 
-## 📜 License
+### 📜 License
 
 This project is licensed under the MIT License.
 
----
+<hr style="border: 1px solid #3b4252; margin: 2em 0;">
 
-## 👤 Author
+### 👤 Author
 
 Tony Condon 
 

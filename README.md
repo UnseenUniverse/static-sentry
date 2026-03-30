@@ -1,7 +1,20 @@
 # 🔍 StaticSentry
 
-A Python-based cybersecurity scanning tool with a modern GUI built using CustomTkinter.  
-This application scans files in a selected directory to detect potentially sensitive or suspicious content using keyword matching and regex-based analysis.
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
+![GUI](https://img.shields.io/badge/GUI-CustomTkinter-1f6feb)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Made With Love](https://img.shields.io/badge/Made%20with-Python%20%26%20Security-blueviolet)
+![Cybersecurity](https://img.shields.io/badge/Focus-Cybersecurity-red)
+
+A Python-based cybersecurity scanning tool with a modern GUI built using CustomTkinter.
+
+StaticSentry scans files in a selected directory to detect potentially sensitive or suspicious content using keyword matching and regex-based analysis.
+
+---
+
+# 🔍 Why StaticSentry?
+Hardcoded credentials and sensitive data in source code are a common security risk. StaticSentry helps identify these issues early by scanning files for patterns associated with secrets, reducing the risk of accidental exposure.
 
 ---
 
@@ -47,6 +60,22 @@ This application scans files in a selected directory to detect potentially sensi
 
 ---
 
+# 📄 Example Output
+
+```bash
+[CRITICAL] example.py
+Line 3: password = "hunter2"
+Line 4: api_key = "TEST-KEY-123"
+
+[WARNING] config.txt
+Line 10: urgent
+Line 12: click here
+
+[SAFE] clean_file.py
+```
+
+---
+
 ## 🖼️ Preview
 
 ![App Screenshot](docs/img/example.png)
@@ -63,9 +92,61 @@ This application scans files in a selected directory to detect potentially sensi
 
 ---
 
+## 📦 Requirements
+
+- Python 3.10+
+- customtkinter
+
+Install dependency:
+```bash
+pip install customtkinter
+```
+
+---
+
 ## ⚙️ Installation
 
 1. Clone the repository:
 ```bash
 git clone https://github.com/UnseenUniverse/static-sentry
 cd static-sentry
+```
+2. (Recommended) Create a virtual environment:
+```bash
+python -m venv .venv
+.\.venv\Scripts\activate
+```
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+4. Run the application:
+```bash
+python main.py
+```
+
+---
+
+## 🚧 Future Improvements
+
+- Add entropy-based secret detection
+- Support for additional file types (JSON, YAML)
+- Export results as JSON/CSV
+- Multithreaded scanning for performance
+- Custom rule configuration via GUI
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👤 Author
+
+Tony Condon 
+
+GitHub: https://github.com/UnseenUniverse
+
+Website: https://tonycondon.com/

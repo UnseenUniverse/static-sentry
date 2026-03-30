@@ -16,8 +16,6 @@ A Python-based cybersecurity scanning tool with a modern GUI built using CustomT
 
 StaticSentry scans files in a selected directory to detect potentially sensitive or suspicious content using keyword matching and regex-based analysis.
 
----
-
 ### 🔍 Why StaticSentry?
 
 Hardcoded credentials and sensitive data in source code are a common security risk. StaticSentry helps identify these issues early by scanning files for patterns associated with secrets, reducing the risk of accidental exposure.

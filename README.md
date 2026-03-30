@@ -29,7 +29,7 @@ Hardcoded credentials and sensitive data in source code are a common security ri
 
 🔐 **Regex-Based Secret Detection**
 
- ⚠️ _Note: Regex-based detection may produce false positives. Future improvements include entropy-based analysis to improve accuracy._
+⚠️ _Note: Regex-based detection may produce false positives. Future improvements include entropy-based analysis to improve accuracy._
 
 **Detects credentials such as:**
 - Passwords

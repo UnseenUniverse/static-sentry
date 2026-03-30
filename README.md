@@ -27,43 +27,46 @@ Hardcoded credentials and sensitive data in source code are a common security ri
 
 ## 🚀 Features
 
-- 🔐 **Regex-Based Secret Detection**
-  - Detects credentials such as:
-    - Passwords
-    - API keys
-    - Tokens
-    - Secrets
+🔐 **Regex-Based Secret Detection**
 
-- ⚠️ **Keyword Detection**
-  - Flags suspicious terms like:
-    - `urgent`, `bank`, `click here`, `free`, `flag`
+ _Note: Regex-based detection may produce false positives. Future improvements include entropy-based analysis to improve accuracy._
 
-- 🧠 **Severity Classification**
-  - **CRITICAL** → Credentials detected  
-  - **WARNING** → Suspicious keywords  
-  - **SAFE** → No issues found  
-  - **ERROR** → File read issues  
+**Detects credentials such as:**
+- Passwords
+- API keys
+- Tokens
+- Secrets
 
-- 📂 **Structured Output**
-  - Results grouped by file:
-    - Credentials
-    - Keywords  
-  - Line numbers included for precise analysis  
+⚠️ **Keyword Detection**
+- Flags suspicious terms like:
+  - `urgent`, `bank`, `click here`, `free`, `flag`
 
-- 🧹 **Noise Reduction**
-  - Duplicate findings removed  
-  - Sorted output for readability  
+🧠 **Severity Classification**
+- **CRITICAL** → Credentials detected  
+- **WARNING** → Suspicious keywords  
+- **SAFE** → No issues found  
+- **ERROR** → File read issues  
 
-- 📊 **Progress Tracking**
-  - Real-time progress bar during scanning  
+📂 **Structured Output**
+- Results grouped by file:
+  - Credentials
+  - Keywords  
+- Line numbers included for precise analysis  
 
-- 🎨 **Modern GUI**
-  - Built with CustomTkinter  
-  - Dark mode interface  
-  - Styled scrollbar and clean layout  
+🧹 **Noise Reduction**
+- Duplicate findings removed  
+- Sorted output for readability  
 
-- 📄 **Export Reports**
-  - Save scan results to a `.txt` file  
+📊 **Progress Tracking**
+- Real-time progress bar during scanning  
+
+🎨 **Modern GUI**
+- Built with CustomTkinter  
+- Dark mode interface  
+- Styled scrollbar and clean layout  
+
+📄 **Export Reports**
+- Save scan results to a `.txt` file  
 
 ---
 

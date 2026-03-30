@@ -13,7 +13,7 @@
 <p align="center"> A Python-based cybersecurity scanning tool with a modern GUI built using CustomTkinter.
 <p align="center"> StaticSentry scans files in a selected directory to detect potentially sensitive or suspicious content using keyword matching and regex-based analysis. </p>
 
-<hr style="border: 1px solid #3b4252; margin: 2em 0;">
+<hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
 ### 🔍 Why StaticSentry?
 
@@ -25,7 +25,7 @@ Hardcoded credentials and sensitive data in source code are a common security ri
 - Scan student or personal projects for sensitive data  
 - Lightweight security checks for small codebases
 
-<hr style="border: 1px solid #3b4252; margin: 2em 0;">
+<hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
 ### 🚀 Features
 
@@ -70,7 +70,7 @@ Hardcoded credentials and sensitive data in source code are a common security ri
 📄 **Export Reports**
 - Save scan results to a `.txt` file
 
-<hr style="border: 1px solid #3b4252; margin: 2em 0;">
+<hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
 ### 📄 Example Output
 
@@ -86,13 +86,13 @@ Line 12: click here
 [SAFE] clean_file.py
 ```
 
-<hr style="border: 1px solid #3b4252; margin: 2em 0;">
+<hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
 ### 🖼️ Preview
 
 ![App Screenshot](docs/img/example.png)
 
-<hr style="border: 1px solid #3b4252; margin: 2em 0;">
+<hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
 ### 🛠️ Technologies Used
 
@@ -102,14 +102,14 @@ Line 12: click here
 - Regex (`re` module)  
 - OS file traversal (`os.walk`)  
 
-<hr style="border: 1px solid #3b4252; margin: 2em 0;">
+<hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
 ### 📦 Requirements
 
 - Python 3.10+
 - customtkinter
 
-<hr style="border: 1px solid #3b4252; margin: 2em 0;">
+<hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
 ### ⚙️ Installation
 
@@ -132,7 +132,7 @@ Dependencies are listed in `requirements.txt`
 python main.py
 ```
 
-<hr style="border: 1px solid #3b4252; margin: 2em 0;">
+<hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
 ### 🚧 Future Improvements
 
@@ -142,13 +142,13 @@ python main.py
 - Multithreaded scanning for performance
 - Custom rule configuration via GUI
 
-<hr style="border: 1px solid #3b4252; margin: 2em 0;">
+<hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
 ### 📜 License
 
 This project is licensed under the MIT License.
 
-<hr style="border: 1px solid #3b4252; margin: 2em 0;">
+<hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
 ### 👤 Author
 

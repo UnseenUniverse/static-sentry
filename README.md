@@ -1,5 +1,8 @@
+<p align="center">
+  <img src="docs/img/StaticSentry-Logo.png" width="40%" height="40%">
+</p>
 
-# <img src="docs/img/StaticSentry-Logo.png" width="40%" height="40%"> <ins>StaticSentry</ins> 
+<h1 align="center">StaticSentry</h1>
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
 ![GUI](https://img.shields.io/badge/GUI-CustomTkinter-1f6feb)
@@ -14,7 +17,7 @@ StaticSentry scans files in a selected directory to detect potentially sensitive
 
 ---
 
-# 🔍 Why StaticSentry?
+## 🔍 Why StaticSentry?
 
 Hardcoded credentials and sensitive data in source code are a common security risk. StaticSentry helps identify these issues early by scanning files for patterns associated with secrets, reducing the risk of accidental exposure.
 

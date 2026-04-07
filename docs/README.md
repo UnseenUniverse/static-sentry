@@ -68,7 +68,9 @@ Hardcoded credentials and sensitive data in source code are a common security ri
 - Styled scrollbar and clean layout  
 
 📄 **Export Reports**
-- Save scan results to a `.txt` file
+- `.txt` → Human-readable output
+- `.json` → Structured data for integrations
+- `.csv` → Spreadsheet-friendly analysis
 
 <hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 

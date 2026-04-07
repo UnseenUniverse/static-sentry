@@ -27,6 +27,16 @@ Hardcoded credentials and sensitive data in source code are a common security ri
 
 <hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
+### 🧠 Detection Approach
+
+StaticSentry combines:
+- Pattern-based detection (regex) for known credential formats
+- Entropy-based analysis for unknown or obfuscated secrets
+
+_This hybrid approach improves detection coverage while maintaining reasonable false positive rates._
+
+<hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
+
 ### 🚀 Features
 
 🔐 **Regex-Based Secret Detection**
@@ -84,7 +94,7 @@ Hardcoded credentials and sensitive data in source code are a common security ri
 <hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
 ### 📄 Example Output
-Supports multiple output formats for both human readability and automation
+_Supports multiple output formats for human readability, automation, and analysis_
 
 #### TXT (Human-readable)
 

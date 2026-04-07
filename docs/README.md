@@ -213,7 +213,7 @@ python main.py
 
 ### 🚧 Roadmap
 
-- Support for additional file types (JSON, YAML)
+- Support scanning additional file types (JSON, YAML)
 - Multithreaded scanning for performance
 - Custom rule configuration via GUI
 

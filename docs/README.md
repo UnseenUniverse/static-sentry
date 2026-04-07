@@ -159,10 +159,16 @@ This project is licensed under the MIT License.
 
 <hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
-### 👤 Author
+### 👤 Maintainer
 
-Tony Condon 
-
-GitHub: https://github.com/UnseenUniverse
-
+Tony Condon  
+GitHub: https://github.com/UnseenUniverse  
 Website: https://tonycondon.com/
+
+<hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
+
+### 👥 Contributors
+
+Thanks to everyone who has contributed to StaticSentry:
+
+- [@vibeyclaw](https://github.com/vibeyclaw) – JSON/CSV export (#6)

@@ -75,6 +75,9 @@ Hardcoded credentials and sensitive data in source code are a common security ri
 <hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
 ### 📄 Example Output
+Supports multiple output formats for both human readability and automation
+
+#### TXT (Human-readable)
 
 ```bash
 [CRITICAL] example.py
@@ -87,6 +90,28 @@ Line 12: click here
 
 [SAFE] clean_file.py
 ```
+
+#### JSON (Structured)
+```json
+{
+  "scan_date": "2026-04-07",
+  "scanned_folder": "/project",
+  "summary": {
+    "critical": 1,
+    "warning": 1,
+    "safe": 1
+  },
+  "results": [
+    {
+      "file_name": "example.py",
+      "severity": "CRITICAL",
+      "matches": [
+        { "line": 3, "type": "credential", "value": "hunter2" },
+        { "line": 4, "type": "credential", "value": "TEST-KEY-123" }
+      ]
+    }
+  ]
+}
 
 <hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
@@ -145,7 +170,7 @@ python main.py
 
 <hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
-### 🚧 Future Improvements
+### 🚧 Roadmap
 
 - Add entropy-based secret detection
 - Support for additional file types (JSON, YAML)

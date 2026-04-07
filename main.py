@@ -1,5 +1,8 @@
 import os
 import re
+import csv
+import json
+import datetime
 import customtkinter as ctk
 import tkinter as tk
 from tkinter import filedialog, messagebox
@@ -31,6 +34,7 @@ class App(ctk.CTk):
         self.geometry("1280x720")
 
         self.selected_folder = ""
+        self.scan_results = []  # Structured results for JSON/CSV export
 
         self.grid_columnconfigure(1, weight=1)
         self.grid_rowconfigure(0, weight=1)
@@ -143,6 +147,7 @@ class App(ctk.CTk):
             return
 
         self.output.delete("1.0", "end")
+        self.scan_results = []  # Reset structured results
 
         critical = warnings = safe = errors = 0
 
@@ -191,6 +196,7 @@ class App(ctk.CTk):
                 found_credentials = sorted(found_credentials, key=lambda x: x[1])
 
                 if found_credentials:
+                    severity = "CRITICAL"
                     critical += 1
                     self.output.insert("end", f"[CRITICAL] {path}\n", "critical")
 
@@ -204,6 +210,7 @@ class App(ctk.CTk):
                             self.output.insert("end", f"    Line {ln}: {k}\n", "warning")
 
                 elif found_keywords:
+                    severity = "WARNING"
                     warnings += 1
                     self.output.insert("end", f"[WARNING] {path}\n", "warning")
 
@@ -212,12 +219,30 @@ class App(ctk.CTk):
                         self.output.insert("end", f"    Line {ln}: {k}\n", "warning")
 
                 else:
+                    severity = "SAFE"
                     safe += 1
                     self.output.insert("end", f"[SAFE] {path}\n", "safe")
+
+                # Store structured result
+                self.scan_results.append({
+                    "file_name": os.path.basename(path),
+                    "file_path": path,
+                    "severity": severity,
+                    "credentials": [{"match": c, "line_number": ln} for c, ln in found_credentials],
+                    "keywords": [{"match": k, "line_number": ln} for k, ln in found_keywords],
+                })
 
             except Exception as e:
                 errors += 1
                 self.output.insert("end", f"[ERROR] {path} ({e})\n", "error")
+                self.scan_results.append({
+                    "file_name": os.path.basename(path),
+                    "file_path": path,
+                    "severity": "ERROR",
+                    "credentials": [],
+                    "keywords": [],
+                    "error": str(e),
+                })
 
         self.progress.set(1)
         self.progress_label.configure(text="Complete (100%)")
@@ -231,16 +256,74 @@ class App(ctk.CTk):
         self.output.insert("end", f"Errors: {errors}\n", "error")
 
     def export_report(self):
-        content = self.output.get("1.0", "end")
-        if not content.strip():
+        if not self.scan_results and not self.output.get("1.0", "end").strip():
             messagebox.showwarning("Warning", "Nothing to export.")
             return
 
-        path = filedialog.asksaveasfilename(defaultextension=".txt")
-        if path:
-            with open(path, "w") as f:
-                f.write(content)
-            messagebox.showinfo("Success", "Report saved.")
+        path = filedialog.asksaveasfilename(
+            defaultextension=".json",
+            filetypes=[
+                ("JSON files", "*.json"),
+                ("CSV files", "*.csv"),
+                ("Text files", "*.txt"),
+            ]
+        )
+        if not path:
+            return
+
+        ext = os.path.splitext(path)[1].lower()
+
+        try:
+            if ext == ".json":
+                self._export_json(path)
+            elif ext == ".csv":
+                self._export_csv(path)
+            else:
+                self._export_txt(path)
+            messagebox.showinfo("Success", f"Report saved to:\n{path}")
+        except Exception as e:
+            messagebox.showerror("Export Error", f"Failed to save report:\n{e}")
+
+    def _export_json(self, path):
+        payload = {
+            "scan_date": datetime.datetime.now().isoformat(),
+            "scanned_folder": self.selected_folder,
+            "total_files": len(self.scan_results),
+            "summary": {
+                "critical": sum(1 for r in self.scan_results if r["severity"] == "CRITICAL"),
+                "warnings": sum(1 for r in self.scan_results if r["severity"] == "WARNING"),
+                "safe": sum(1 for r in self.scan_results if r["severity"] == "SAFE"),
+                "errors": sum(1 for r in self.scan_results if r["severity"] == "ERROR"),
+            },
+            "results": self.scan_results,
+        }
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2, ensure_ascii=False)
+
+    def _export_csv(self, path):
+        fieldnames = ["file_name", "file_path", "severity", "line_number", "match_type", "match"]
+        with open(path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            for result in self.scan_results:
+                base = {
+                    "file_name": result["file_name"],
+                    "file_path": result["file_path"],
+                    "severity": result["severity"],
+                }
+                if result["credentials"]:
+                    for item in result["credentials"]:
+                        writer.writerow({**base, "line_number": item["line_number"], "match_type": "credential", "match": item["match"]})
+                if result["keywords"]:
+                    for item in result["keywords"]:
+                        writer.writerow({**base, "line_number": item["line_number"], "match_type": "keyword", "match": item["match"]})
+                if not result["credentials"] and not result["keywords"]:
+                    writer.writerow({**base, "line_number": "", "match_type": "", "match": ""})
+
+    def _export_txt(self, path):
+        content = self.output.get("1.0", "end")
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(content)
 
 # Run
 if __name__ == "__main__":

@@ -147,7 +147,6 @@ python main.py
 
 - Add entropy-based secret detection
 - Support for additional file types (JSON, YAML)
-- Export results as JSON/CSV
 - Multithreaded scanning for performance
 - Custom rule configuration via GUI
 

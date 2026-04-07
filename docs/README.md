@@ -11,7 +11,7 @@
 ![Cybersecurity](https://img.shields.io/badge/Focus-Cybersecurity-red)
 
 <p align="center"> A Python-based cybersecurity scanning tool with a modern GUI built using CustomTkinter.
-<p align="center"> StaticSentry scans files in a selected directory to detect potentially sensitive or suspicious content using keyword matching and regex-based analysis. </p>
+<p align="center"> StaticSentry scans files in a selected directory to detect potentially sensitive or suspicious content using keyword matching. Supports both pattern-based and entropy-based secret detection. </p>
 
 <hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
@@ -31,13 +31,21 @@ Hardcoded credentials and sensitive data in source code are a common security ri
 
 🔐 **Regex-Based Secret Detection**
 
-⚠️ _Note: Regex-based detection may produce false positives. Future improvements include entropy-based analysis to improve accuracy._
+⚠️ _Note: Regex-based detection may produce false positives. StaticSentry now includes optional entropy-based analysis to improve detection of unknown or obfuscated secrets._
 
 **Detects credentials such as:**
 - Passwords
 - API keys
 - Tokens
 - Secrets
+
+🧬 **Entropy-Based Secret Detection (Optional)**
+- Detects high-entropy strings (potential secrets) that do not match known patterns  
+- Helps identify:
+  - Random tokens  
+  - Obfuscated credentials  
+  - Unknown API keys  
+- Can be enabled/disabled via the GUI  
 
 🗝️ **Keyword Detection**
 - Flags suspicious terms like:
@@ -53,6 +61,7 @@ Hardcoded credentials and sensitive data in source code are a common security ri
 - Results grouped by file:
   - Credentials
   - Keywords  
+  - Entropy matches  
 - Line numbers included for precise analysis  
 
 🧹 **Noise Reduction**
@@ -81,8 +90,12 @@ Supports multiple output formats for both human readability and automation
 
 ```bash
 [CRITICAL] example.py
+Credentials:
 Line 3: password = "hunter2"
 Line 4: api_key = "TEST-KEY-123"
+
+Entropy Matches:
+Line 10: a8f3klm9qwz...
 
 [WARNING] config.txt
 Line 10: urgent
@@ -105,13 +118,30 @@ Line 12: click here
     {
       "file_name": "example.py",
       "severity": "CRITICAL",
-      "matches": [
-        { "line": 3, "type": "credential", "value": "hunter2" },
-        { "line": 4, "type": "credential", "value": "TEST-KEY-123" }
+      "credentials": [
+        { "match": "password = \"hunter2\"", "line_number": 3 },
+        { "match": "api_key = \"TEST-KEY-123\"", "line_number": 4 }
+      ],
+      "keywords": [
+        { "match": "flag", "line_number": 2 }
+      ],
+      "entropy": [
+        { "match": "a8f3klm9qwz...", "line_number": 12 }
       ]
     }
   ]
 }
+```
+
+#### CSV (Spreadsheet-friendly)
+_Flattened output for easy analysis in tools like Excel or Google Sheets_
+```csv
+file,severity,line,type,value
+example.py,CRITICAL,3,credential,password = "hunter2"
+example.py,CRITICAL,4,credential,api_key = "TEST-KEY-123"
+example.py,CRITICAL,12,entropy,a8f3klm9qwz...
+config.txt,WARNING,10,keyword,urgent
+config.txt,WARNING,12,keyword,click here
 ```
 
 <hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
@@ -173,7 +203,6 @@ python main.py
 
 ### 🚧 Roadmap
 
-- Add entropy-based secret detection
 - Support for additional file types (JSON, YAML)
 - Multithreaded scanning for performance
 - Custom rule configuration via GUI

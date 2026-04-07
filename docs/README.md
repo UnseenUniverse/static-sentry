@@ -216,6 +216,7 @@ python main.py
 - Support scanning additional file types (JSON, YAML)
 - Multithreaded scanning for performance
 - Custom rule configuration via GUI
+- Establish versioned releases (v1.0+) with changelogs and packaged builds
 
 <hr style="border: none; border-top: 1px solid #3b4252; margin: 2em 0;">
 
